@@ -1,1 +1,3 @@
-document.write('welcome to my app ah ah fuck fuck hit hjhj')
+import createTable from './utils/create-table'
+// Create the table
+createTable(50)
