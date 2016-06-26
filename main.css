@@ -3,3 +3,7 @@ td {
   height: 20px;
   width: 20px;
 }
+
+.active {
+  background-color: red;
+}
