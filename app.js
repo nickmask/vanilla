@@ -1,4 +1,3 @@
-import createTable from './utils/create-table'
-import createActive from './utils/create-active'
+import colourHover from './utils/colour-hover'
 
-createTable(100)
+colourHover(100)

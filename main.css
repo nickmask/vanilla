@@ -1,14 +1,21 @@
 td {
-  border: 1px black solid;
   height: 5px;
   width: 5px;
   padding: 0
 }
 
 .active {
-  background-color: red;
+  background-color: black;
 }
 
 .deactive {
-  background-color: green;
+  background-color: red;
+}
+
+.dedeactive {
+  background-color: blue;
+}
+
+table {
+  border: 1px solid black;
 }
