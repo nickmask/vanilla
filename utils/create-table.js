@@ -15,8 +15,21 @@ export default function (size) {
   document.body.appendChild(tbl)
 }
 
-
 function handleEvent (e) {
   const cell = e.target.id
   document.getElementById(cell).className = 'active'
+  const data = cell.split('y')
+  const x = data[0].replace('x', '')
+  const y = data[1]
+  yActive(x, y)
+}
+
+function yActive (x, y) {
+    while (y >= 1) {
+        document.getElementById(`x${x}y${y}`).className = 'active'
+        const newY = y - 1
+        console.log('x', x, 'y', y, 'newY', newY)
+        return setTimeout(() => yActive(x, newY), 100)
+    }
+  console.log('done burger')
 }
