@@ -17,19 +17,29 @@ export default function (size) {
 
 function handleEvent (e) {
   const cell = e.target.id
-  document.getElementById(cell).className = 'active'
   const data = cell.split('y')
-  const x = data[0].replace('x', '')
-  const y = data[1]
-  yActive(x, y)
+  const x = Number(data[0].replace('x', ''))
+  const y = Number(data[1])
+  const top = 250
+  if (e.target.className !== 'active') {
+    document.getElementById(cell).className = 'active'
+    activateY(x, y)
+  } else {
+    document.getElementById(cell).className = 'deactive'
+    deactivateY(x, y, top)
+  }
 }
 
-function yActive (x, y) {
-    while (y >= 1) {
-        document.getElementById(`x${x}y${y}`).className = 'active'
-        const newY = y - 1
-        console.log('x', x, 'y', y, 'newY', newY)
-        return setTimeout(() => yActive(x, newY), 100)
+function activateY (x, y) {
+    while (y >= 0) {
+      document.getElementById(`x${x}y${y}`).className = 'active'
+      return setTimeout(() => activateY(x, y -1), 100)
     }
-  console.log('done burger')
+}
+
+function deactivateY (x, y, top) {
+  while (y < top) {
+    document.getElementById(`x${x}y${y}`).className = 'deactive'
+    return setTimeout(() => deactivateY(x, y + 1, top), 100)
+  }
 }

@@ -8,3 +8,7 @@ td {
 .active {
   background-color: red;
 }
+
+.deactive {
+  background-color: green;
+}
